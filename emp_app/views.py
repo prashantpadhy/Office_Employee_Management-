@@ -25,8 +25,8 @@ def add_emp(request):
         salary = int(request.POST['salary'])
         bonus = int(request.POST['bonus'])
         phone = int(request.POST['phone'])
-        dept = int(request.POST['dept'])
-        role = int(request.POST['role'])
+        dept = request.POST['dept']
+        role = request.POST['role']
         new_emp = Employee(first_name= first_name, last_name=last_name, salary=salary, bonus=bonus, phone=phone, dept_id = dept, role_id = role, hire_date = datetime.now())
         new_emp.save()
         return HttpResponse('Employee added Successfully')
